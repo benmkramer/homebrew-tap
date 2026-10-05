@@ -1,32 +1,30 @@
 class Shtodo < Formula
   desc "A blazing fast, fully local TUI based todo app."
   homepage "https://github.com/benmkramer/shtodo"
-  version "0.1.0-beta.2"
+  version "0.1.0-beta.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.2/shtodo-aarch64-apple-darwin.tar.xz"
-      sha256 "62b528713abdb0b514cbbff361a60ac2c2c0f6427cb68b584cdbce8570b889ad"
+      url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.3/shtodo-aarch64-apple-darwin.tar.xz"
+      sha256 "a77c659197896c3c605a43d72f7d05ce2446491e5ba1f0d95a869eaf543113c1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.2/shtodo-x86_64-apple-darwin.tar.xz"
-      sha256 "16cd572ab15ecaea8c55859fa4bab5701853156869d3a6429ef4b9d33949efaa"
+      url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.3/shtodo-x86_64-apple-darwin.tar.xz"
+      sha256 "4099e1f182aec79c13725479dce9960a145b8ca325bcc72bffaa2d2b2231df7a"
     end
   end
-  if OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.2/shtodo-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "481f9f456b64e9be996384900bf4445ad4a8d6fb2864b0e90d9785cad6788772"
-    end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.3/shtodo-x86_64-unknown-linux-musl.tar.xz"
+    sha256 "41171d2953615478e0a05c8d237931a3c72b05396fd5982b84ffe59d48eda6d3"
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":              {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-unknown-linux-gnu":          {},
     "x86_64-unknown-linux-musl-dynamic": {},
-    "x86_64-unknown-linux-musl-static": {}
-  }
+    "x86_64-unknown-linux-musl-static":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
