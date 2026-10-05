@@ -1,20 +1,20 @@
 class Shtodo < Formula
   desc "A blazing fast, fully local TUI based todo app."
   homepage "https://github.com/benmkramer/shtodo"
-  version "0.1.0-beta.3"
+  version "0.1.0-beta.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.3/shtodo-aarch64-apple-darwin.tar.xz"
-      sha256 "a77c659197896c3c605a43d72f7d05ce2446491e5ba1f0d95a869eaf543113c1"
+      url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.4/shtodo-aarch64-apple-darwin.tar.xz"
+      sha256 "a94674e27a0ff9f4fe2e853e8820d0ce6717679f015f73d7d5af292e8482fcfa"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.3/shtodo-x86_64-apple-darwin.tar.xz"
-      sha256 "4099e1f182aec79c13725479dce9960a145b8ca325bcc72bffaa2d2b2231df7a"
+      url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.4/shtodo-x86_64-apple-darwin.tar.xz"
+      sha256 "5a328b1d9059ed1c195ee23cd29dd3fb579e54b4b2d9e8e999badf3ef2e8133a"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.3/shtodo-x86_64-unknown-linux-musl.tar.xz"
-    sha256 "41171d2953615478e0a05c8d237931a3c72b05396fd5982b84ffe59d48eda6d3"
+    url "https://github.com/benmkramer/shtodo/releases/download/v0.1.0-beta.4/shtodo-x86_64-unknown-linux-musl.tar.xz"
+    sha256 "9f19659a5f59a19c2a14ac82d0353ab058a8bb9e073aecf5929b1b8a2dfdf3b2"
   end
   license "MIT"
 
